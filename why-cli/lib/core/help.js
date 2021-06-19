@@ -15,6 +15,4 @@ const helpOptions = () => {
   })
 }
 
-module.exports = {
-  helpOptions,
-}
+module.exports = helpOptions
