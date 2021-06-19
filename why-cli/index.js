@@ -1,22 +1,14 @@
 #!/usr/bin/env node
-
 const program = require('commander')
+
+// 导入自定义文件 help
+const helpOptions = require('./lib/core/help')
 
 // 查看版本号
 program.version(require('./package.json').version)
 
-// 增加自己的 options
-program.option('-w --why', 'a why cli')
-program.option(
-  '-d --dest<dest>',
-  'a destination folder，Eg: -d /src/components',
-)
-program.option('-f --framework<framework>', 'choice you framework')
+// 帮助和可选信息调用
+helpOptions()
 
-program.on('--help', function () {
-  console.log('')
-  console.log('Others: ')
-  console.log('  other options~')
-})
 // 解析
 program.parse(process.argv)
