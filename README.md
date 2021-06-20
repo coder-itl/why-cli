@@ -32,17 +32,50 @@
   why -d | --dest # 创建对应目录
   ```
 
-+ 对应库依赖文档地址
++ 基本组成
 
-  ```bash
-  
-  commander: https://github.com/tj/commander.js
-  
-  download-git-repo:
-  	https://www.npmjs.com/package/download-git-repo | https://gitlab.com/flippidippi/download-git-repo
-  open:
-  	npm install open
-  ```
+  + `commander`
+
+    ```bash
+    文档地址: https://github.com/tj/commander.js
+    作用: 解析参数
+    安装: npm install commander
+    ```
+
+  + `inquirer`
+
+    ```bash
+    文档地址:
+    作用: 交互式命令
+    安装:
+    ```
+
+  + `download-git-repo`
+
+    ```bash
+    文档地址:
+        https://www.npmjs.com/package/download-git-repo  
+        https://gitlab.com/flippidippi/download-git-repo
+    
+    作用: 下载模板
+    安装: npm install download-git-repo
+    ```
+
+  + `chalk`
+
+    ```bash
+    文档地址:
+    作用: 在命令行增加色彩
+    安装: npm install chalk
+    ```
+
+  + `consoledate`
+
+    ```bash
+    作用: 统一的模板引擎(比如: 对 ejs 解析)
+    ```
+
+    
 
 + 内容补充
 
