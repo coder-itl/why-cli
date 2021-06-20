@@ -13,15 +13,17 @@ const { commandSpawn } = require('../utils/terminal')
 const createProjectAction = async (project) => {
   // 下载时用于提示
   console.log('why cli is download,place wait ···········')
+  try {
+    // 1. clone 项目
+    await download(whyCli, project, { clone: true })
 
-  // 1. clone 项目
-  await download(whyCli, project, { clone: true })
-  
-  // 2. 执行 npm install
-  const command = process.platform === 'win32' ? 'npm.cmd' : 'npm'
-  // cwd: 定义 npm install 进入的目录
-  await commandSpawn(command, ['install'], { cwd: `./${project}` })
-
+    // 2. 执行 npm install
+    const command = process.platform === 'win32' ? 'npm.cmd' : 'npm'
+    // cwd: 定义 npm install 进入的目录
+    await commandSpawn(command, ['install'], { cwd: `./${project}` })
+  } catch (error) {
+    console.log('error info no show into teminal')
+  }
   // 3. 运行 npm run serve
   // 4. 打开浏览器
 }
