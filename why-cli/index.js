@@ -1,4 +1,5 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
+
 const program = require('commander')
 
 // 导入自定义文件 help
