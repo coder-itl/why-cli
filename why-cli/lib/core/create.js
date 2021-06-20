@@ -9,9 +9,7 @@ const createCommands = () => {
     .command('create <project> [others···]')
     // 描述信息： 克隆一个仓库 why-cli 到 本地文件夹
     .description('clone a repositiory why-cli into local folder')
-    .action((project, others) => {
-      createProjectAction(project)
-    })
+    .action(createProjectAction)
 }
 
 module.exports = createCommands
