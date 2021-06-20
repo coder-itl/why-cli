@@ -5,6 +5,7 @@ const { promisify } = require('util')
 
 // 导入 download function
 const download = promisify(require('download-git-repo'))
+const open = require('open')
 
 const { whyCli } = require('../config/repo-config')
 const { commandSpawn } = require('../utils/terminal')
@@ -20,12 +21,15 @@ const createProjectAction = async (project) => {
     // 2. 执行 npm install
     const command = process.platform === 'win32' ? 'npm.cmd' : 'npm'
     // cwd: 定义 npm install 进入的目录
-    await commandSpawn(command, ['install'], { cwd: `./${project}` })
+    await commandSpawn(command, ['install'], { cwd: `./${project}/` })
   } catch (error) {
     console.log('error info no show into teminal')
   }
   // 3. 运行 npm run serve
+  await commandSpawn(command, ['run', 'serve'], { cw: `./${project}` })
   // 4. 打开浏览器
+  const localhost = '127.0.0.1:8080/'
+  open(localhost)
 }
 module.exports = {
   createProjectAction,

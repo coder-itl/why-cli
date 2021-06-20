@@ -1,4 +1,4 @@
-let whyCli = 'direct:https://github.com/coder-itl/why-cli.git'
+let whyCli = 'direct:https://github.com/coderwhy/hy-vue-temp.git'
 module.exports = {
   whyCli,
 }

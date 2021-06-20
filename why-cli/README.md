@@ -40,7 +40,8 @@
   
   download-git-repo:
   	https://www.npmjs.com/package/download-git-repo | https://gitlab.com/flippidippi/download-git-repo
-  
+  open:
+  	npm install open
   ```
 
 + 内容补充
